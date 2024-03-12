@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Author settings page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+    <body>
+        <p>Microblogger: Author Settings</p>
+        <a href="home" style="color:green">back</a>
+        <!-- show blogh information -->
+        <% blog_info.forEach(function(item){ %>
+            <center>
+                    <h1> <%= item.blog_title %> </h1>
+                    <h2> <%= item.blog_subtitle %> </h2>
+                    <h3> <%= item.author_name %> </h3>
+            </center> 
+            <br>
+            <br>
+
+        <!-- edit blog information -->
+        <center>
+            <form method="post">
+
+                <label for="blog_title">Blog Title:</label> 
+                <input type="text" id="title" name="title" value= "<%= item.blog_title %>" ><br><br>
+        </div>
+
+                <label for="blog_subtitle">Blog Subtitle:</label>
+                <input type="text" id="subtitle" name="subtitle" value= "<%= item.blog_subtitle %>" ><br><br>
+                <label for="blog_subtitle">Author Name:</label>
+                <input type="text" id="author_name" name="author_name" value= "<%= item.author_name %>" ><br><br>
+                <button type="submit" class="btn btn-outline-success">update</button>
+            </form>
+        </center>
+
+        <% }) %>
+
+    </body>
+</html>
